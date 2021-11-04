@@ -46,6 +46,11 @@ function draw(userChoice, computerChoice) {
     setTimeout(function() {document.getElementById(userChoice).classList.remove('gray-glow') }, 1000)
 }
 
+function randomiseColor(element){
+    element.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+    element.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
 function game(userChoice){
     document.querySelector("body").style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
     const computerChoice = getComputerChoice();
