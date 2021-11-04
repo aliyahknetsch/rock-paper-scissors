@@ -41,11 +41,13 @@ function lose(userChoice, computerChoice) {
 
 function draw(userChoice, computerChoice) {
     result_p.innerHTML = `It's a draw....I'll get you next time...`;
+
     document.getElementById(userChoice).classList.add('gray-glow');
     setTimeout(function() {document.getElementById(userChoice).classList.remove('gray-glow') }, 1000)
 }
 
 function game(userChoice){
+    document.querySelector("body").style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
     const computerChoice = getComputerChoice();
     console.log(computerChoice);
     switch (userChoice + computerChoice) {
@@ -69,8 +71,6 @@ function game(userChoice){
             break;
     }
 }
-
-
 
 function main (){
     rock_div.addEventListener('click', function() {

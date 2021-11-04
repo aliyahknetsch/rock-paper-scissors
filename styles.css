@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color:rgb(25, 27, 128);
+    background-color: rgb(43, 59, 201);
 }
 
 header {
@@ -25,7 +25,7 @@ header {
 
 .gray-glow {
     border: 4px solid gray;
-    box-shadow: 0 0 10px darkgray;
+    box-shadow: 0 0 10px rgb(22, 21, 21);
 }
 header > h1 {
     color: #000000;
@@ -57,7 +57,7 @@ header > h1 {
 #user-label {
     position: absolute;
     top: 30px;
-    left: -25px;
+    left: -30px;
 }
 
 #computer-label {
@@ -83,7 +83,7 @@ header > h1 {
 }
 
 .choice {
-    border: 4px solid rgb(71, 121, 73);
+    border: 4px solid rgb(92, 143, 92);
     border-radius: 50%;
     margin: 0 15px;
     padding: 10px;
@@ -93,7 +93,7 @@ header > h1 {
 
 .choice:hover {
     cursor: pointer;
-    background: rgb(206, 209, 44);
+    background: rgb(139, 92, 143);
 }
 
 #action-message {
