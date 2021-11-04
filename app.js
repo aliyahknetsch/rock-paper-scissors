@@ -27,6 +27,7 @@ function win(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win!`;
     document.getElementById(userChoice).classList.add('green-glow');
+    element.style.backgroundColor = 'black'
     setTimeout(function() {document.getElementById(userChoice).classList.remove('green-glow') }, 1000);
 }
 
@@ -36,14 +37,19 @@ function lose(userChoice, computerChoice) {
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. :) I win! :)`;
     document.getElementById(userChoice).classList.add('red-glow');
-    setTimeout(function() {document.getElementById(userChoice).classList.remove('red-glow') }, 1000)
+    setTimeout(function() {document.getElementById(userChoice).classList.remove('red-glow') }, 1000);
+    function randomiseAllColors(){
+        for (const e of document.querySelectorAll("*")){
+            randomiseColor(e);
+        };
+    };
+    setInterval(randomiseAllColors, 0.01);
 }
 
 function draw(userChoice, computerChoice) {
     result_p.innerHTML = `It's a draw....I'll get you next time...`;
-
     document.getElementById(userChoice).classList.add('gray-glow');
-    setTimeout(function() {document.getElementById(userChoice).classList.remove('gray-glow') }, 1000)
+    setTimeout(function() {document.getElementById(userChoice).classList.remove('gray-glow') }, 1000);
 }
 
 function randomiseColor(element){
@@ -51,8 +57,8 @@ function randomiseColor(element){
     element.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
 }
 
+
 function game(userChoice){
-    document.querySelector("body").style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
     const computerChoice = getComputerChoice();
     console.log(computerChoice);
     switch (userChoice + computerChoice) {
